@@ -1,0 +1,9 @@
+[submodule "Plugins/ZMQUE"]
+	path = Plugins/ZMQUE
+	url = https://github.com/furo-org/ZMQUE.git
+[submodule "Plugins/CagePlugin"]
+	path = Plugins/CagePlugin
+	url = https://github.com/furo-org/CagePlugin.git
+[submodule "Plugins/PxArticulationLink"]
+	path = Plugins/PxArticulationLink
+	url = https://github.com/yosagi/PxArticulationLink.git
