@@ -113,6 +113,7 @@ git submodule update --init --recursive --depth=1
 ### ビルドおよび起動
 
 VTC2018.uprojectをダブルクリックすると必要なモジュールのビルドが走り、成功するとUnreal Editorが起動します。Visual Studioでソースを参照/編集するにはVTC2018.uprojectを右クリックして'Generate Visual Studio project files'すると、VTC2018.slnが生成されるので、そこから起動できます。
+初回の起動時に色々生成するのでPCのスペックによっては非常に時間がかかる可能性があります。気長に待ってください。
 
 なお、PxArticulationLink Pluginには今のところバイナリしか置いていません。リビルドしたりクリーンしたりすると必要なファイルまで消えてビルドできなくなります。その場合Plugins/PxArticulationLinkをcheckoutするなどして元に戻せば再度ビルドできるようになります。
 
