@@ -11,6 +11,13 @@
 + Visual Studio 2017 15.9.4
 + Unreal Engine 4.21.2
 
+## 関連Repository
+
++ [Cage Plugin](https://github.com/furo-org/CagePlugin)
++ [ZMQUE Plugin](https://github.com/furo-org/ZMQUE)
++ [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink)
++ [cage-clientライブラリ](https://github.com/furo-org/cage-client)
+
 ## 事前に必要な物
 
 WindowsでUE4開発をするのに必要な物一式が必要です。
@@ -113,7 +120,7 @@ git submodule update --init --recursive --depth=1
 ### ビルドおよび起動
 
 VTC2018.uprojectをダブルクリックすると必要なモジュールのビルドが走り、成功するとUnreal Editorが起動します。Visual Studioでソースを参照/編集するにはVTC2018.uprojectを右クリックして'Generate Visual Studio project files'すると、VTC2018.slnが生成されるので、そこから起動できます。
-初回の起動時に色々生成するのでPCのスペックによっては非常に時間がかかる可能性があります。気長に待ってください。
+初回の起動時に色々生成するのでPCのスペックによっては、"Loading...95%"という表示のあたりで30分以上の時間がかかる可能性があります。気長に待ってください。
 
 なお、PxArticulationLink Pluginには今のところバイナリしか置いていません。リビルドしたりクリーンしたりすると必要なファイルまで消えてビルドできなくなります。その場合Plugins/PxArticulationLinkをcheckoutするなどして元に戻せば再度ビルドできるようになります。
 
@@ -132,4 +139,67 @@ Unreal EditorでAlt-Pを押すとシミュレーションが始まります
 |F8|マネキンから離脱|
 
 Unreal Editorの初期設定では、Editorがフォーカスを失うとCPU使用率を下げてしまい、フレームレートが落ちます。この挙動をさけるにはメニューバー>Edit>Editor Preferences>General>Performance で Use Less CPU when in Background のチェックを外してください。
+
+### 動作確認 (走行試験)
+
+ひとまず外部からのコマンドではなく、ブループリントから車輪を回転させて動作確認します。
+
+![Edit PuffinBP](PuffinBP.png)
+
+1. ワールドアウトライナでPuffinBPを探し、右にあるリンクからPuffinBPを編集します。
+2. イベントグラフタブで、Event Tickの白い五角形をSet VWの白い五角形につなぎます。
+3. Set VWのWを0に、Vを20程度に変更します。ここでの数値の単位はVがcm/s, Wがdeg/sです。
+4. 左上、ツールバーにあるコンパイルボタンを押します。
+
+これで速度20cm/sで走行するコマンドが毎フレーム発行されます。Alt-Pを押してシミュレーションを開始し、Puffinが動くことを確認して下さい。
+
+### 動作確認 (スキャナ)
+
+Alt-Pを押して走行させているときに、[VeloView](https://www.paraview.org/veloview/)等のVelodyneのスキャンを可視化するツールを起動し、点群が表示されることを確認して下さい。
+
+![VeloView](VeloView.png)
+
+### 動作確認 (通信)
+
+[cage-clientライブラリ](https://github.com/furo-org/cage-client) を使って通信してみます。一番手軽なのは [sampleSubscriber.py](https://github.com/furo-org/CageClient/blob/master/sampleSubscriber.py) あたりでしょう。このサンプルはpyzmqでUnrealEngineと通信し、Puffinの状態をコンソールに出力します。
+
+pythonが動き、pyzmqがインストールされている環境でsampleSubscriber.pyを起動します。Unreal Editorが起動しているPCと同じPCで動かす場合にはコマンドラインオプションは不要です。別のPCで起動する場合にはUnreal Editorが動いているPCのIPアドレスを渡してください。うまくいけば以下のような情報が流れます。
+
+```
+$ python sampleSubscriber.py [IPアドレス]
+{
+"Report": {
+"Name": "PuffinBP_2",
+"Time": 40.707527,
+"Data": {
+    "Position": {
+        "X": 24925.876953125,
+        "Y": 15119.17578125,
+        "Z": 94.71395111083985
+    },
+    "Pose": {
+        "X": 0.003285798244178295,
+        "Y": -0.003456566948443651,
+        "Z": 0.0883670523762703,
+        "W": 0.9960765242576599
+    },
+    "AngVel": {
+        "X": -0.002657068893313408,
+        "Y": -0.10393170267343521,
+        "Z": 0.6329377293586731
+    },
+    "Accel": {
+        "X": 6.723383903503418,
+        "Y": 2.596554756164551,
+        "Z": 983.0648193359375
+    },
+    "Yaw": 10.138204574584961,
+    "LeftRpm": 0.10816722363233566,
+    "RightRpm": 3.8788769245147707
+}
+}
+}
+```
+
+より詳しくは[cage-clientライブラリ](https://github.com/furo-org/cage-client)を参照してください。
 
