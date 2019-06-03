@@ -1,4 +1,4 @@
-# VTC2018
+﻿# VTC2018
 
 つくばチャレンジ2018の確認走行区間を模擬した環境。
 
@@ -27,7 +27,7 @@ GithubからUE4のソースコードをCloneしてくる必要はありません
 
 + Windows 10 1809 64bit
 + Visual Studio 2017 15.9.4
-+ Unreal Engine 4.21.2
++ Unreal Engine 4.22.2
 
 ## セットアップ
 
