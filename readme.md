@@ -7,9 +7,13 @@
 
 以下の環境で動作確認しています。
 
++ Ryzen7 1800X
++ GeForce GTX 1080
 + Windows 10 1809 64bit
 + Visual Studio 2017 15.9.4
 + Unreal Engine 4.21.2
+
+なお、起動するまでに約50GB程度のストレージが必要となります。
 
 ## 関連Repository
 
