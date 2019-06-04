@@ -123,8 +123,11 @@ git submodule update --init --recursive --depth=1
 
 ### ビルドおよび起動
 
-VTC2018.uprojectをダブルクリックすると必要なモジュールのビルドが走り、成功するとUnreal Editorが起動します。Visual Studioでソースを参照/編集するにはVTC2018.uprojectを右クリックして'Generate Visual Studio project files'すると、VTC2018.slnが生成されるので、そこから起動できます。
-初回の起動時に色々生成するのでPCのスペックによっては、"Loading...95%"という表示のあたりで30分以上の時間がかかる可能性があります。気長に待ってください。
+VTC2018.uprojectをダブルクリックすると必要なモジュールのビルドが走り、成功するとUnreal Editorが起動します。初回の起動時に色々生成するのでPCのスペックによっては、"Loading...95%"という表示のあたりで30分以上の時間がかかる可能性があります。気長に待ってください。再度Unreal Editorを起動するときもVTC2018.uprojectをダブルクリックします。二回目以降の起動では初回にビルドしたものが再利用されるので1分かからず起動すると思います。
+
+何らかの原因で起動できなかった場合、Saved/Logs/VTC2018.logにログが残るので、これを読むと原因がわかるかもしれません。
+
+Visual Studioでソースを参照/編集するにはVTC2018.uprojectを右クリックして'Generate Visual Studio project files'して下さい。VTC2018.slnが生成されるので、そこからVisual Studioを起動できます。
 
 なお、PxArticulationLink Pluginには今のところバイナリしか置いていません。リビルドしたりクリーンしたりすると必要なファイルまで消えてビルドできなくなります。その場合Plugins/PxArticulationLinkをcheckoutするなどして元に戻せば再度ビルドできるようになります。
 
