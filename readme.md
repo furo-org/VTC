@@ -51,8 +51,8 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 
 ### 動作環境の準備
 
-1. [Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs)をダウンロードしてインストールします。既にインストールされている場合は、念のためVisual Studio Installerを起動し、最新のVisual Studio 2017に更新しておきます。
-2. git ([Git for windows](https://gitforwindows.org))をインストールします。コマンドラインのgitが使えるようになっているほうが良いです。
+1. [Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/productinfo/vs2017-system-requirements-vs)をダウンロードしてインストールします。インストーラでは"C++によるデスクトップ開発"にチェックを入れて下さい。既にインストールされている場合は、念のためVisual Studio Installerを起動し、最新のVisual Studio 2017に更新しておきます。
+2. git ([Git for windows](https://gitforwindows.org))をインストールします。トラブルを避けるためにできればコマンドラインのgitを使って下さい。
 
 ### Unreal Engineのインストール
 
