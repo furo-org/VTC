@@ -11,7 +11,7 @@
 + GeForce GTX 1080
 + Windows 10 1809 64bit
 + Visual Studio 2017 15.9.4
-+ Unreal Engine 4.21.2
++ Unreal Engine 4.22.2
 
 なお、起動するまでに約50GB程度のストレージが必要となります。
 
@@ -35,7 +35,7 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 ### アカウントの準備
 
 1. まず最初にgithubのアカウントをまだ持っていなければ、(A)[githubのページ](https://github.com)でgithubアカウントを作成します。
-2. 次に[UnrealEngineのページ](https://www.unrealengine.com/ja/feed)に行き、(B)EpicGamesのアカウントを作成し、(C)ゲームデベロッパーのEULAに同意し、(D)UnrealEngineをダウンロード/インストールします。
+2. 次に[UnrealEngineのページ](https://www.unrealengine.com/ja/feed)に行き、(B)EpicGamesのアカウントを作成し、(C)ゲームデベロッパーのEULAに同意し、(D)UnrealEngineをダウンロード/インストールします。ただ実際にはインストーラがインストールするのはEpic Games Launcherで、Unreal Engineそのもののインストールは手順が必要です(後述)。
 3. さらに[Unreal Engineの接続済みアカウントのページ](https://www.unrealengine.com/account/connected)で(E)Githubアカウントと接続します。
 4. その後[GithubのEpicGamesのページ](https://github.com/EpicGames)に行き、(F)InvitationをAcceptします。
 
@@ -61,10 +61,10 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 1. Epic Games Launcherを起動し、左のタブからUnreal Engineを選択。
 2. 上のタブからライブラリを選択
 3. Engineバージョンの右の+をクリックしてEngineスロットを追加。
-4. 追加されたスロットのバージョン番号の右にある▼をクリックし、4.21.0を選択。
+4. 追加されたスロットのバージョン番号の右にある▼をクリックし、4.22.2を選択。
 5. インストールをクリック。
 
-このドキュメント執筆時点で最新のUE4は4.22ですが、動作確認しているのは4.21ですので、同じバージョンを使ってください。なお、Engineのバイナリは約10GB程あり、ダウンロードにはそこそこ時間がかかります。
+なお、Engineのバイナリは約10GB程あり、ダウンロードにはそこそこ時間がかかります。
 
 ### 補足
 
