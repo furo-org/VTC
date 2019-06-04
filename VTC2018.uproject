@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.21",
+	"EngineAssociation": "4.22",
 	"Category": "",
 	"Description": "",
 	"Enterprise": false,
@@ -21,7 +21,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "zmq",
+			"Name": "zmque",
 			"Enabled": true
 		},
 		{
