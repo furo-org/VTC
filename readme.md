@@ -20,7 +20,7 @@
 + [Cage Plugin](https://github.com/furo-org/CagePlugin)
 + [ZMQUE Plugin](https://github.com/furo-org/ZMQUE)
 + [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink)
-+ [cage-clientライブラリ](https://github.com/furo-org/cage-client)
++ [cage-clientライブラリ](https://github.com/furo-org/CageClient)
 
 ## 事前に必要な物
 
@@ -68,7 +68,7 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 
 ### 補足
 
-これらの他、外部プログラムからロボットを動かすには[cage-clientライブラリ](https://github.com/furo-org/cage-client)があると便利です。cage-clientは今のところLinuxで動作するのでこれを動かす環境(実機, WSL, 仮想マシンなど)が必要です。
+これらの他、外部プログラムからロボットを動かすには[cage-clientライブラリ](https://github.com/furo-org/CageClient)があると便利です。cage-clientは今のところLinuxで動作するのでこれを動かす環境(実機, WSL, 仮想マシンなど)が必要です。
 
 ## セットアップ
 
@@ -168,7 +168,7 @@ Alt-Pを押して走行させているときに、[VeloView](https://www.paravie
 
 ### 動作確認 (通信)
 
-[cage-clientライブラリ](https://github.com/furo-org/cage-client) を使って通信してみます。一番手軽なのは [sampleSubscriber.py](https://github.com/furo-org/CageClient/blob/master/sampleSubscriber.py) あたりでしょう。このサンプルはpyzmqでUnrealEngineと通信し、Puffinの状態をコンソールに出力します。
+[cage-clientライブラリ](https://github.com/furo-org/CageClient) を使って通信してみます。一番手軽なのは [sampleSubscriber.py](https://github.com/furo-org/CageClient/blob/master/sampleSubscriber.py) あたりでしょう。このサンプルはpyzmqでUnrealEngineと通信し、Puffinの状態をコンソールに出力します。
 
 pythonが動き、pyzmqがインストールされている環境でsampleSubscriber.pyを起動します。Unreal Editorが起動しているPCと同じPCで動かす場合にはコマンドラインオプションは不要です。別のPCで起動する場合にはUnreal Editorが動いているPCのIPアドレスを渡してください。うまくいけば以下のような情報が流れます。
 
@@ -208,7 +208,7 @@ $ python sampleSubscriber.py [IPアドレス]
 }
 ```
 
-より詳しくは[cage-clientライブラリ](https://github.com/furo-org/cage-client)を参照してください。
+より詳しくは[cage-clientライブラリ](https://github.com/furo-org/CageClient)を参照してください。
 
 ## License
 
