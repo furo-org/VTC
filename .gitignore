@@ -95,6 +95,8 @@ Content/KiteDemo/*
 Content/ParagonProps/*
 Content/InfinityBladeGrassLands/*
 Content/GTFreeMaterials/*
+Content/SampleMap/*
+Content/Lighting/*
 
 # PxArticulationLink
 Plugins/PxArticulationLink/Source/Private/*
