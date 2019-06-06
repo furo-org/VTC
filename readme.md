@@ -18,7 +18,7 @@
 
 なお、Unreal Editorで起動するまでには約50GB程度のストレージが必要となります。
 
-ちょっと試してみるだけならばVTC2018を[パッケージしたバイナリ(64bit Windows版、約700MB)](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BonDNnxqNPMF6OCJ7hyzZIw?e=hlfLD9)を用意しましたのでこれを使ってみてください。zipを展開してVTC2018.exeを起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4です。パッケージ版はUnreal Editorが使えないので後述の動作確認(走行試験)はできませんが、スキャナと通信の確認はできるはずです。また、[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使った動作確認にも使えます。
+ちょっと試してみるだけならばVTC2018を[パッケージしたバイナリ(64bit Windows版、約700MB)](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BnmRve_PuS1y1sB2-dvryDw?e=cxDaMb)を用意しましたのでこれを使ってみてください。zipを展開してVTC2018.exeを起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4です。パッケージ版はUnreal Editorが使えないので後述の動作確認(走行試験)はできませんが、スキャナと通信の確認はできるはずです。また、[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使った動作確認にも使えます。
 
 
 ## 関連Repository
