@@ -3,6 +3,9 @@
 つくばチャレンジ2018の確認走行区間を模擬した環境。
 ![Screen Shot](ScreenShot.png)
 
+
+
+
 ## 動作環境
 
 以下の環境で動作確認しています。
@@ -13,7 +16,10 @@
 + Visual Studio 2017 15.9.4
 + Unreal Engine 4.22.2
 
-なお、起動するまでに約50GB程度のストレージが必要となります。
+なお、Unreal Editorで起動するまでには約50GB程度のストレージが必要となります。
+
+ちょっと試してみるだけならばVTC2018を[パッケージしたバイナリ(64bit Windows版、約700MB)](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BonDNnxqNPMF6OCJ7hyzZIw?e=hlfLD9)を用意しましたのでこれを使ってみてください。zipを展開してVTC2018.exeを起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4です。パッケージ版はUnreal Editorが使えないので後述の動作確認(走行試験)はできませんが、スキャナと通信の確認はできるはずです。また、[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使った動作確認にも使えます。
+
 
 ## 関連Repository
 
