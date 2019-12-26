@@ -3,24 +3,6 @@
 つくばチャレンジ2018の確認走行区間を模擬した環境。
 ![Screen Shot](ScreenShot.png)
 
-
-
-
-## 動作環境
-
-以下の環境で動作確認しています。
-
-+ Ryzen7 1800X
-+ GeForce GTX 1080
-+ Windows 10 1809 64bit
-+ Visual Studio 2017 15.9.4
-+ Unreal Engine 4.22.2
-
-なお、Unreal Editorで起動するまでには約50GB程度のストレージが必要となります。
-
-ちょっと試してみるだけならばVTC2018を[パッケージしたバイナリ(64bit Windows版、約700MB)](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BnmRve_PuS1y1sB2-dvryDw?e=cxDaMb)を用意しましたのでこれを使ってみてください。zipを展開してVTC2018.exeを起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4です。パッケージ版はUnreal Editorが使えないので後述の動作確認(走行試験)はできませんが、スキャナと通信の確認はできるはずです。また、[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使った動作確認にも使えます。
-
-
 ## 関連Repository
 
 + [Cage Plugin](https://github.com/furo-org/CagePlugin)
@@ -28,7 +10,40 @@
 + [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink)
 + [cage-clientライブラリ](https://github.com/furo-org/CageClient)
 
-## 事前に必要な物
+## 動作環境
+
+以下の環境で動作確認しています。
+
+PC
+
++ Ryzen7 1800X(3.6GHz) + GeForce GTX 1080
++ Core i7 7700HQ(2.8GHz) + GeForce GTX 1060
+
+ソフトウェア環境
+
++ Windows 10 1909 64bit
++ Visual Studio 2017 15.9.18
++ Unreal Engine 4.23.1
+
+シミュレータを動かす方法は2つあります。
+
+1. どこかでパッケージしたバイナリを動かす
+2. UE関連の開発環境を整えてUnreal Editorで動かす
+
+パッケージした実行環境は十分な能力を持つPCさえあればすぐ動かせますが、マップや各種パラメータの編集ができません。一方Unreal Editorで動かす場合はマップ、パラメータなど自由に編集して試行錯誤することができますが、50GB程度のストレージが必要だったり各種インストール等準備が煩雑だったりします。
+
+Windows 64bit用にパッケージしたバイナリはここに用意しておきます。
+
++ [VTC2019 Windows 64bit 約750MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ETDQWwohngxKsu09_ga2H9UBs5A4OmVFnmzQckcgW8upzA?e=IJuMfI)
++ [VTC2018 (以前のバージョン) Windows 64bit 約700MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BnmRve_PuS1y1sB2-dvryDw?e=cxDaMb)
+
+zipを展開してVTC2018.exeを起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4です。パッケージ版はUnreal Editorで編集することはできませんが[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
+
+以下ではUnreal Editorを使う開発環境の整備方法を説明します。
+
+## Unreal Editorでの開発環境の整備
+
+### 事前に必要な物
 
 WindowsでUE4開発をするのに必要な物一式が必要です。
 
@@ -46,7 +61,6 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 4. その後[GithubのEpicGamesのページ](https://github.com/EpicGames)に行き、(F)InvitationをAcceptします。
 
 上記(A)から(F)までうまくいけば、[Unreal Engineのソースコードリポジトリ](https://github.com/EpicGames/UnrealEngine)にアクセスできるようになります。
-
 
 参考リンク
 
@@ -104,6 +118,7 @@ git submodule update --init --recursive --depth=1
 ```
 
 これで以下のPluginが取り込まれます。
+
 + [Cage Plugin](https://github.com/furo-org/CagePlugin)
 + [ZMQUE Plugin](https://github.com/furo-org/ZMQUE)
 + [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink)
@@ -129,7 +144,7 @@ git submodule update --init --recursive --depth=1
 
 ### ビルドおよび起動
 
-VTC2018.uprojectをダブルクリックすると必要なモジュールのビルドが走り、成功するとUnreal Editorが起動します。初回の起動時に色々生成するのでPCのスペックによっては、"Loading...95%"という表示のあたりで30分以上の時間がかかる可能性があります。気長に待ってください。再度Unreal Editorを起動するときもVTC2018.uprojectをダブルクリックします。二回目以降の起動では初回にビルドしたものが再利用されるので1分かからず起動すると思います。
+VTC2018.uprojectをダブルクリックすると必要なモジュールのビルドが走り、成功するとUnreal Editorが起動します。初回の起動時に色々生成するのでPCのスペックによっては、"Loading...95%"という表示のあたりで一時間程度の時間がかかる可能性があります。気長に待ってください。再度Unreal Editorを起動するときもVTC2018.uprojectをダブルクリックします。二回目以降の起動では初回にビルドしたものが再利用されるので1分かからず起動すると思います。
 
 何らかの原因で起動できなかった場合、Saved/Logs/VTC2018.logにログが残るので、これを読むと原因がわかるかもしれません。
 
@@ -139,7 +154,7 @@ Visual Studioでソースを参照/編集するにはVTC2018.uprojectを右ク�
 
 ## 使う
 
-Unreal EditorでAlt-Pを押すとシミュレーションが始まります
+Unreal EditorでAlt-Pを押すか、ツールバーのPlayボタンを押すととシミュレーションが始まります
 シミュレーション内ではマネキンを操作して世界に干渉するか、Editorの機能で干渉することができます。マネキンの主要な操作は以下の通りです。
 
 |キー|機能|
@@ -150,10 +165,24 @@ Unreal EditorでAlt-Pを押すとシミュレーションが始まります
 |f|追跡|
 |g|つかむ/はなす|
 |F8|マネキンから離脱|
+|@|コンソール呼び出し|
 
 Unreal Editorの初期設定では、Editorがフォーカスを失うとCPU使用率を下げてしまい、フレームレートが落ちます。この挙動をさけるにはメニューバー>Edit>Editor Preferences>General>Performance で Use Less CPU when in Background のチェックを外してください。
 
-### 動作確認 (走行試験)
+### コンソール変数
+
+実行中に挙動を変更するための以下の変数があります。
+
+|変数名|機能|
+----|----
+|cage.lidar.visualize|Lidar反射点の描画頻度を指定する。0で描画しない。1で全点描画、5(デフォルト)で5点に1回描画する|
+|cage.lidar.broadcast|ロボットが外部から操作されていないときにlidarのパケットをbroadcastするか指定する。0(デフォルト)でbroadcastしない。1でbroadcastする。|
+
+コンソール変数を設定するには"@"キーを押してコンソールを呼び出し(画面下に黒いバーとプロンプトが出る)、スペース区切りで変数名と設定値を入力します。変数名はTAB補間ができます。
+
+デフォルトでは起動直後はlidarのパケットをbroadcastしないので、シミュレータを単独で動かしてlidarのパケットを覗いてみたいようなときには cage.lidar.broadcastを1にして使ってください。
+
+### 動作確認 (走行試験, Unreal Editorが使える場合のみ)
 
 ひとまず外部からのコマンドではなく、ブループリントから車輪を回転させて動作確認します。
 
@@ -169,6 +198,7 @@ Unreal Editorの初期設定では、Editorがフォーカスを失うとCPU使�
 ### 動作確認 (スキャナ)
 
 Alt-Pを押して走行させているときに、[VeloView](https://www.paraview.org/veloview/)等のVelodyneのスキャンを可視化するツールを起動し、点群が表示されることを確認して下さい。
+なお、cage.lidar.broadcast コンソール変数を1に設定しておく必要があります。
 
 ![VeloView](VeloView.png)
 
