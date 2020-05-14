@@ -1,6 +1,6 @@
-﻿# VTC2018
+﻿# VTC: Virtual Tsukuba Challenge
 
-つくばチャレンジ2018の確認走行区間を模擬した環境。
+つくばチャレンジ2019の確認走行区間を模擬した環境と、そこで動作する移動ロボットシミュレータ。
 ![Screen Shot](ScreenShot.png)
 
 ## 関連Repository
@@ -250,7 +250,7 @@ $ python sampleSubscriber.py [IPアドレス]
 
 VTC2018はApache2.0とします。
 
-Copyright [2019] Tomoaki Yoshida <yoshida@furo.org>
+Copyright [2017-2020] Tomoaki Yoshida <yoshida@furo.org>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
