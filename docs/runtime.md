@@ -1,7 +1,9 @@
+# シミュレータの操作
+
 ## 使う
 
-Unreal EditorでAlt-Pを押すか、ツールバーのPlayボタンを押すととシミュレーションが始まります
-シミュレーション内ではマネキンを操作して世界に干渉するか、Editorの機能で干渉することができます。マネキンの主要な操作は以下の通りです。
+パッケージ版のバイナリを実行するか、Unreal EditorでツールバーのPlayボタン(ショートカットAlt-P)を押すとシミュレーションが始まります。
+シミュレーション内ではマネキンを操作して世界に干渉するか、Unreal Editorの機能で干渉することができます。マネキンの主要な操作は以下の通りです。
 
 |キー|機能|
 ----|----
@@ -10,10 +12,9 @@ Unreal EditorでAlt-Pを押すか、ツールバーのPlayボタンを押すと�
 |space|ジャンプ|
 |f|ロボットを追跡|
 |g|つかむ/はなす|
-|F8|マネキンから離脱|
 |@|コンソール呼び出し|
-
-Unreal Editorの初期設定では、Editorがフォーカスを失うとCPU使用率を下げてしまい、フレームレートが落ちます。この挙動をさけるにはメニューバー>Edit>Editor Preferences>General>Performance で Use Less CPU when in Background のチェックを外してください。
+|F8|マネキンから離脱 (Unreal Editorで動かした場合のみ)|
+|ESC|終了(一部のバージョン)|
 
 ### コンソール変数
 
@@ -88,4 +89,4 @@ $ python sampleSubscriber.py [IPアドレス]
 }
 ```
 
-より詳しくは[cage-clientライブラリ](https://github.com/furo-org/CageClient)を参照してください。
+ロボットを動かすには[cage-clientライブラリ](https://github.com/furo-org/CageClient)を参照してください。
