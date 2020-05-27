@@ -142,7 +142,7 @@ Unreal EditorでAlt-Pを押すか、ツールバーのPlayボタンを押すと�
 
 ひとまず外部からのコマンドではなく、ブループリントから車輪を回転させて動作確認します。
 
-![Edit PuffinBP](../PuffinBP.png)
+![Edit PuffinBP](PuffinBP.png)
 
 1. ワールドアウトライナでPuffinBPを探し、右にあるリンクからPuffinBPを編集します。
 2. イベントグラフタブで、Event Tickの白い五角形をSet VWの白い五角形につなぎます。

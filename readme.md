@@ -1,15 +1,14 @@
 ﻿# VTC: Virtual Tsukuba Challenge
 
 つくばチャレンジ 3rd stage の確認走行区間を模擬した環境と、そこで動作する移動ロボットシミュレータ。
-![Screen Shot](https://youtu.be/gb9t7RFmgpc)
-[![VTC with lidar intensity enabled](https://img.youtube.com/vi/gb9t7RFmgpc/0.jpg)](https://www.youtube.com/watch?v=gb9t7RFmgpc)
+[![VTC with lidar intensity enabled](docs/ScreenShot-i.png)](https://www.youtube.com/watch?v=gb9t7RFmgpc)
 
 ## 関連Repository
 
-+ [Cage Plugin](https://github.com/furo-org/CagePlugin)
-+ [ZMQUE Plugin](https://github.com/furo-org/ZMQUE)
-+ [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink)
-+ [cage-clientライブラリ](https://github.com/furo-org/CageClient)
++ [Cage Plugin](https://github.com/furo-org/CagePlugin): 移動ロボット、センサ等の機能をパッケージしたプラグイン
++ [ZMQUE Plugin](https://github.com/furo-org/ZMQUE): ZeroMQのdllをロードするプラグイン
++ [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink): PhysX Articulation APIにアクセスするためのプラグイン
++ [cage-clientライブラリ](https://github.com/furo-org/CageClient): シミュレータ内ロボットと通信し、コマンドを送りステータスを取得するライブラリ
 
 ## 動作環境
 
@@ -35,6 +34,7 @@ PC
 
 ## パッケージ済みバイナリのダウンロード
 
++ [VTC 2020/5/27版 Windows 64bit 約1GB](https://1drv.ms/u/s!AkekAlL4McuXlQJYoddkABbTTq32?e=WMVwUI)
 + [VTC2019 Windows 64bit 約750MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ETDQWwohngxKsu09_ga2H9UBs5A4OmVFnmzQckcgW8upzA?e=IJuMfI)
 + [VTC2018 (以前のバージョン) Windows 64bit 約700MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BnmRve_PuS1y1sB2-dvryDw?e=cxDaMb)
 

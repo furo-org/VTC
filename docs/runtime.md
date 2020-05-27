@@ -39,7 +39,7 @@
 
 これでブロードキャストアドレスにlidarのUDPパケットが送信され、可視化ツールに届きます。
 
-![VeloView](../VeloView.png)
+![VeloView](VeloView.png)
 
 可視化できない場合は以下を確認してください。
 
