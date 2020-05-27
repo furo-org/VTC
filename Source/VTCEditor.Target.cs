@@ -3,11 +3,11 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class VTC2018EditorTarget : TargetRules
+public class VTCEditorTarget : TargetRules
 {
-	public VTC2018EditorTarget(TargetInfo Target) : base(Target)
+	public VTCEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-		ExtraModuleNames.Add("VTC2018");
+		ExtraModuleNames.Add("VTC");
 	}
 }

@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class VTC2018 : ModuleRules
+public class VTC : ModuleRules
 {
-	public VTC2018(ReadOnlyTargetRules Target) : base(Target)
+	public VTC(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
