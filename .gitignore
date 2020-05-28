@@ -97,6 +97,10 @@ Content/InfinityBladeGrassLands/*
 Content/GTFreeMaterials/*
 Content/SampleMap/*
 Content/Lighting/*
+Content/MS_AsphaltEss
+Content/MS_StTilesEss
+Content/MS_NorForest3
+Content/MegascansMeadowPack
 
 # PxArticulationLink
 Plugins/PxArticulationLink/Source/Private/*
