@@ -38,11 +38,11 @@ PC
 + [VTC2019 Windows 64bit 約750MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ETDQWwohngxKsu09_ga2H9UBs5A4OmVFnmzQckcgW8upzA?e=IJuMfI)
 + [VTC2018 (以前のバージョン) Windows 64bit 約700MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BnmRve_PuS1y1sB2-dvryDw?e=cxDaMb)
 
-zipを展開してVTC2018.exeを起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
+zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
 
 ## License
 
-VTC2018はApache2.0とします。
+VTCはApache2.0とします。
 
 Copyright [2017-2020] Tomoaki Yoshida <yoshida@furo.org>
 
