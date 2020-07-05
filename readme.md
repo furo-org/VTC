@@ -40,6 +40,29 @@ PC
 
 zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけですので各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが[cage-clientライブラリ](https://github.com/furo-org/CageClient)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
 
+## 環境データについて
+
+環境の構築に国土地理院基盤地図情報(基盤地図情報 基本項目及び数値標高モデル(5mメッシュ) 544000,544010)を承認を受けて使用しています。
+
+「測量法に基づく国土地理院長承認（使用）R 2JHs 231」
+
+以下のファイルは基盤地図情報 基本項目をベースに加工して生成したものです。
+ + Assets/TC-Asphalt-geo.tif
+ + Assets/TC-Pedestrian-geo.tif
+ + Assets/TC-Park-Green-geo.tif
+ + Assets/TC-Water-geo.tif
+ + Assets/TC-Buildings-geo.tif
+
+さらに以下のファイルはこれらファイルからVTCのLandscape Layerに適用できる形にAssets/LayerGen.pyを使って加工したものです
+
++ Assets/Layer-Asphalt.png
++ Assets/Layer-Park-Green.png
++ Assets/Layer-Pedestrian.png
++ Assets/Layer-Water.png
+
+また、Assets/TC-DEM-geo.tifは数値標高モデル(5mメッシュ)を使って生成したファイルで、Assets/heightmap.png はこれをVTCのLandscape heightmapに適用できる形にAssets/LandscapeGen.pyを使って加工したものです。
+これらファイルの二次利用したい場合はその他ファイル群とは条件が異なりますので注意してください。
+
 ## License
 
 VTCはApache2.0とします。
