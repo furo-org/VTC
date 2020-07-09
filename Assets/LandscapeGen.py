@@ -27,7 +27,7 @@ import unreal
 import gdal
 import osr
 import os
-from PIL import Image, ImageTransform
+from PIL import Image, ImageTransform, ImageMath
 import numpy as np
 
 al=unreal.EditorAssetLibrary
@@ -40,6 +40,7 @@ projdir=os.path.join(sdir,"..")
 stepSize=10  # [cm] # landscale cell size
 zScale=10    # 100: +/-256 [m], 10: +/-25.6 [m]  1: 256 [cm]     # landscape z scale value
 zEnhance=1   # optional z scaling factor
+zClipping=19.0 # Clip lowest height [m]   (None for no clipping)
 inputGeotiff=os.path.join(projdir,"Assets","TC-DEM-geo.tif")
 outputHeightmap=os.path.join(projdir,"Assets","heightmap.png")
 toUEScale=100.*128./zScale   # [m]->[cm]->[heightmap unit]
@@ -121,7 +122,7 @@ lx,ly,hx,hy,size=getLandscapeBBox()
 ref=getGeoReference()
 
 text_label="Projecting coordinates"
-nFrames=4
+nFrames=5
 with unreal.ScopedSlowTask(nFrames, text_label) as slow_task:
   slow_task.make_dialog(True)
 
@@ -129,11 +130,11 @@ with unreal.ScopedSlowTask(nFrames, text_label) as slow_task:
   bl=ref.get_bl(lx,hy)
   br=ref.get_bl(hx,hy)
   tr=ref.get_bl(hx,ly)
-  print("Reference Quad=tl:{0} bl:{1} br:{2} tr:{3}".format(tl, bl, br, tr))
   zo=ref.get_actor_location()
   zobl=ref.get_bl(zo.x,zo.y)
-  print("GeoReference in UE {0}".format(zo))
-  print("GeoReference in BL {0}".format(zobl))
+  #print("Reference Quad=tl:{0} bl:{1} br:{2} tr:{3}".format(tl, bl, br, tr))
+  #print("GeoReference in UE {0}".format(zo))
+  #print("GeoReference in BL {0}".format(zobl))
 
   gt=GeoTIFF(inputGeotiff)
   tluv=gt.getUV(tl)
@@ -142,20 +143,29 @@ with unreal.ScopedSlowTask(nFrames, text_label) as slow_task:
   truv=gt.getUV(tr)
   zouv=gt.getUV(zobl)
 
-  print("Reference Quad on GeoTIFF image =tl:{0} bl:{1} br:{2} tr:{3}".format(tluv, bluv, bruv, truv, zouv))
-  uvf=tluv+bluv+bruv+truv
-  uvs=tuple(int(round(f)) for f in uvf)
+  #print("Reference Quad on GeoTIFF image =tl:{0} bl:{1} br:{2} tr:{3}".format(tluv, bluv, bruv, truv, zouv))
+
+  slow_task.enter_progress_frame(1,"Clipping z range")
+  print(gt.image.mode)
+  print(gt.image)
+  if zClipping is not None:
+    imageref=Image.new(gt.image.mode,gt.image.size,zClipping)
+    clippedimg=ImageMath.eval("max(a,b)",a=gt.image,b=imageref)
+    clippedimg.save(os.path.join(projdir,"Assets","clipped.tif"))
+  else:
+    clippedimg=gt.image
 
   slow_task.enter_progress_frame(1,"Transforming image region")
 
-  img=gt.image.transform(size,Image.QUAD,data=uvf,resample=Image.BILINEAR)
+  uvf=tluv+bluv+bruv+truv
+  img=clippedimg.transform(size,Image.QUAD,data=uvf,resample=Image.BICUBIC)
 
   slow_task.enter_progress_frame(1,"Transforming height values")
 
   # scale to match landscape scaling, and offset to align to GeoReference actor
   zov=gt.image.getpixel(zouv)
   zos=32768-(zov*zEnhance-zo.z/100.)*toUEScale   # 32768: mid point (height=0)
-  iarrf=np.array(img.getdata())*toUEScale*zEnhance + zos
+  iarrf=np.array(img.getdata()).clip(zcmin,zcmax)*toUEScale*zEnhance + zos
 
   slow_task.enter_progress_frame(1,"Converting to 16bit grayscale")
   # convert to uint16 using numpy

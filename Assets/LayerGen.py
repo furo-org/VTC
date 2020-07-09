@@ -60,7 +60,8 @@ FilesToGo=[
   },
   {
     'source': os.path.join(projdir,"Assets","TC-Buildings-geo.tif"),
-    'out': os.path.join(projdir,"Assets","Layer-Buildings.png")
+    'out': os.path.join(projdir,"Assets","Layer-Buildings.png"),
+    'add': os.path.join(projdir,"Assets","Layer-RoadMarking.png")
   },
   {
     'source': os.path.join(projdir,"Assets","TC-Water-geo.tif"),
