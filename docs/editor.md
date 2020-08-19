@@ -18,7 +18,7 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 3. さらに[Unreal Engineの接続済みアカウントのページ](https://www.unrealengine.com/account/connected)で **(E)** Githubアカウントと接続します。
 4. その後[GithubのEpicGamesのページ](https://github.com/EpicGames)に行き、**(F)** InvitationをAcceptします。
 
-上記 **(A)** から **(F)** までうまくいけば、[Unreal Engineのソースコードリポジトリ](https://github.com/EpicGames/UnrealEngine)にアクセスできるようになります。
+上記 **(A)** から **(F)** までうまくいけば、[PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink) (及び[Unreal Engineのソースコードリポジトリ](https://github.com/EpicGames/UnrealEngine))にアクセスできるようになります。念のため作成したアカウントでこれらリポジトリにアクセスし、404にならないことを確認してください。
 
 参考リンク
 
@@ -39,7 +39,7 @@ WindowsでUE4開発をするのに必要な物一式が必要です。
 1. Epic Games Launcherを起動し、左のタブからUnreal Engineを選択。
 2. 上のタブからライブラリを選択
 3. Engineバージョンの右の+をクリックしてEngineスロットを追加。
-4. 追加されたスロットのバージョン番号の右にある▼をクリックし、4.25.2を選択。
+4. 追加されたスロットのバージョン番号の右にある▼をクリックし、4.25.3を選択。
 5. インストールをクリック。
 
 なお、Engineのバイナリは約10GB程あり、ダウンロードにはそこそこ時間がかかります。
