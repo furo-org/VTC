@@ -41,6 +41,14 @@ PC
 
 zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけなので、各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが、[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
 
+## 利用事例
+
+情報をいただいた動作確認例、利用例等を紹介します。
+
+### [Unreal Engineの環境構築から、ROS(LIO-SAM)を使用してマップ作成を行うまで(VTC)](https://beike-re.hatenablog.com/entry/VTC/LIO-SAM/3d-mapping)
+#11 で教えていただきました。Thanks @uhobeike 。
+
+
 ## License
 
 VTCはApache2.0とします。
