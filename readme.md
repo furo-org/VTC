@@ -5,11 +5,11 @@
 
 ## 関連Repository
 
-+ [Cage Plugin](https://github.com/furo-org/CagePlugin): 移動ロボット、センサ等の機能をパッケージしたプラグイン
-+ [ZMQUE Plugin](https://github.com/furo-org/ZMQUE): ZeroMQのdllをロードするプラグイン
-+ [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink): PhysX Articulation APIにアクセスするためのプラグイン
-+ [CageClientライブラリ](https://github.com/furo-org/CageClient): シミュレータ内ロボットと通信し、コマンドを送りステータスを取得するライブラリ
-+ [cage_ros_stack](https://github.com/furo-org/cage_ros_stack): CageClientライブラリのROSブリッジ
++ [Cage Plugin](https://github.com/furo-org/CagePlugin): 移動ロボット、センサ等の機能をパッケージしたプラグイン(VTCがサブモジュールとして使用)
++ [ZMQUE Plugin](https://github.com/furo-org/ZMQUE): ZeroMQのdllをロードするプラグイン(VTCがサブモジュールとして使用)
++ [PxArticulationLink Plugin](https://github.com/yosagi/PxArticulationLink): PhysX Articulation APIにアクセスするためのプラグイン(VTCがサブモジュールとして使用)
++ [CageClientライブラリ](https://github.com/furo-org/CageClient): シミュレータ内ロボットと通信し、コマンドを送りステータスを取得するライブラリ(ユーザーが別途入手して利用)
++ [cage_ros_stack](https://github.com/furo-org/cage_ros_stack): CageClientライブラリのROSブリッジ(ユーザーが別途入手して利用)
 
 ## 動作環境
 
@@ -31,15 +31,16 @@ PC
 + [シミュレータの操作方法](docs/runtime.md)
 + [エディタでの開発環境設定](docs/editor.md)
 
-環境を編集したり、シミュレータのコードに手を入れるにはエディタでの開発環境をセットアップする必要があります。既存の環境でロボットを走らせるだけならば、パッケージ済みバイナリと[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)があれば十分です。
+環境を編集したり、シミュレータのコードに手を入れるにはエディタでの開発環境をセットアップする必要があります。既存の環境でロボットを走らせるだけならば、パッケージ済みバイナリと[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってください。
 
 ## パッケージ済みバイナリのダウンロード
 
+Releaseページよりダウンロードしてください。zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけなので、各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが、[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
+
+念のため古いバイナリも残しておきます。
 + [VTC 2020/5/28版 Windows 64bit 約1GB](https://1drv.ms/u/s!AkekAlL4McuXlQOBSBVlSNaRIZpQ?e=veg3e0)
 + [VTC2019 Windows 64bit 約750MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ETDQWwohngxKsu09_ga2H9UBs5A4OmVFnmzQckcgW8upzA?e=IJuMfI)
 + [VTC2018 (以前のバージョン) Windows 64bit 約700MB](https://chibakoudai-my.sharepoint.com/:u:/g/personal/yoshida_tomoaki_p_chibakoudai_jp/ER00YHh9YYFEpBnFCl16Ug4BnmRve_PuS1y1sB2-dvryDw?e=cxDaMb)
-
-zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけなので、各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが、[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
 
 ## 利用事例
 
@@ -48,10 +49,11 @@ zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動する
 ### [Unreal Engineの環境構築から、ROS(LIO-SAM)を使用してマップ作成を行うまで(VTC)](https://beike-re.hatenablog.com/entry/VTC/LIO-SAM/3d-mapping)
 #11 で教えていただきました。Thanks @uhobeike 。
 
+## 環境データの出典及び利用条件について
 
-## 環境データについて
+### 国土地理院基盤地図情報に基づくデータ
 
-環境の構築に国土地理院基盤地図情報(基盤地図情報 基本項目及び数値標高モデル(5mメッシュ) 544000,544010)を承認を受けて使用しています。
+VTCマップのLandscapeの構築に国土地理院基盤地図情報(基盤地図情報 基本項目及び数値標高モデル(5mメッシュ) 544000,544010)を承認を受けて使用しています。
 
 「測量法に基づく国土地理院長承認（使用）R 2JHs 231」
 
@@ -62,19 +64,47 @@ zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動する
  + Assets/TC-Water-geo.tif
  + Assets/TC-Buildings-geo.tif
 
-さらに以下のファイルはこれらファイルからVTCのLandscape Layerに適用できる形にAssets/LayerGen.pyを使って加工したものです
+以下のファイルはこれらファイルからVTCのLandscape Layerに適用できる形にAssets/python_scripts/LayerGen.pyを使って加工したものです
 
 + Assets/Layer-Asphalt.png
 + Assets/Layer-Park-Green.png
 + Assets/Layer-Pedestrian.png
 + Assets/Layer-Water.png
 
-また、Assets/TC-DEM-geo.tifは数値標高モデル(5mメッシュ)を使って生成したファイルで、Assets/heightmap.png はこれをVTCのLandscape heightmapに適用できる形にAssets/LandscapeGen.pyを使って加工したものです。
-これらファイルの二次利用したい場合はその他ファイル群とは条件が異なりますので注意してください。
+また次のファイルは数値標高モデル(5mメッシュ)を使って生成したファイルです。
++ Assets/TC-DEM-geo.tif
+
+以下のファイルはこのGeoTiffを入力の一部としてスクリプト(Assets/python_scripts/LandscapeGen.py)で生成したものです。
+
++ Assets/heightmap.png
++ Assets/heightmap-0909.png
+
+さらにmapファイル群(Content/Maps/VTC2018/TC/TC_x?_y?.umap)にはこれら生成物(地形及び地図情報)がインポートされています。
+
+これらファイル群はその他ファイル群とは利用条件が異なりますので二次利用したい場合などは注意してください。詳しくは[国土地理院のページ](https://www.gsi.go.jp/LAW/2930-qa.html)を参照してください。
+
+### その他データセットに基づくデータ
+
+以下のファイル群は千葉工大fuRoチームが2019年に収集したデータに基づいて作成された点群です。元のデータセットは[別途公開](https://github.com/tsukubachallenge/tc-datasets#tc2019-furo-map-data)していますので、これらファイル群の利用条件も元のデータセットの利用条件([CC-BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/))に従います
+
++ Content/Maps/Voxel/map_tc19_xxx.uasset
+
+以下のファイルは千葉工大fuRoチームが2020年に収集したデータに基づいて生成された部分を含みます。元のデータセットは別途公開予定です。
+
++ Assets/heightmap-0909.png
 
 ## License
 
-VTCはApache2.0とします。
+前節で説明した各ファイルについてはそれぞれのライセンスとします。また、以下のモデルデータについては[CC-BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)とします。
+
++ Assets/City Hall.fbx
++ Assets/CityHallChair.blend
++ Assets/CityHallChair.fbx
++ Assets/CityHallTable1.blend
++ Assets/CityHallTable1.fbx
++ Assets/CityHallTable2.fbx
+
+VTCのその他特に表記のないものについてはApache2.0とします。ライセンス全文はLICENSEファイルを参照してください。
 
 Copyright [2017-2020] Tomoaki Yoshida <yoshida@furo.org>
 

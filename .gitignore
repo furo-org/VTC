@@ -113,3 +113,6 @@ Plugins/PxArticulationLink/Source/Private/*
 
 # Visual Studio code
 .vscode/*
+
+# RIDER for UE
+.idea/

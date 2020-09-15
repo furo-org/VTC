@@ -7,6 +7,8 @@
 
 「測量法に基づく国土地理院長承認（使用）R 2JHs 231」
 
+また、モデルの配置については[千葉工大fuRoチームが2019年に収集した点群データ](https://github.com/tsukubachallenge/tc-datasets#tc2019-furo-map-data)を利用して位置決めしています。
+
 ## License
 
 Copyright 2020 Tomoaki Yoshida <yoshida@furo.org>

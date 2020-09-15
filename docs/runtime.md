@@ -24,6 +24,7 @@
 ----|----
 |cage.lidar.visualize|Lidar反射点の描画頻度を指定する。0で描画しない。1で全点描画、5(デフォルト)で5点に1回描画する|
 |cage.lidar.broadcast|ロボットが外部から操作されていないときにlidarのパケットをbroadcastするか指定する。0(デフォルト)でbroadcastしない。1でbroadcastする。|
+|cage.lidar.AirAbsorb|Lidarの大気減衰係数を設定する。デフォルトは0.001。大きくすると遠方の反射点が暗くなり、見えにくくなる。|
 
 コンソール変数を設定するには"@"キーを押してコンソールを呼び出し(画面下に黒いバーとプロンプトが出る)、スペース区切りで変数名と設定値を入力します。変数名はTAB補間ができます。
 
@@ -89,4 +90,4 @@ $ python sampleSubscriber.py [IPアドレス]
 }
 ```
 
-ロボットを動かすには[cage-clientライブラリ](https://github.com/furo-org/CageClient)を参照してください。
+プログラムからロボットを動かすには[cage-clientライブラリ](https://github.com/furo-org/CageClient)や、[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を参照してください。
