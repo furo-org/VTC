@@ -30,6 +30,7 @@ PC
 
 + [シミュレータの操作方法](docs/runtime.md)
 + [エディタでの開発環境設定](docs/editor.md)
++ [トラブルシューティング](docs/troubleshooting.md)
 
 環境を編集したり、シミュレータのコードに手を入れるにはエディタでの開発環境をセットアップする必要があります。既存の環境でロボットを走らせるだけならば、パッケージ済みバイナリと[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってください。
 
