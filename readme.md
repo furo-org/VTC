@@ -24,18 +24,20 @@ PC
 
 + Windows 10 1909 64bit
 + Visual Studio 2019 16.5.4
-+ Unreal Engine 4.25.3
++ Unreal Engine 4.25.4
 
 ## ドキュメント
 
 + [シミュレータの操作方法](docs/runtime.md)
 + [エディタでの開発環境設定](docs/editor.md)
++ [トラブルシューティング](docs/troubleshooting.md)
 
 環境を編集したり、シミュレータのコードに手を入れるにはエディタでの開発環境をセットアップする必要があります。既存の環境でロボットを走らせるだけならば、パッケージ済みバイナリと[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってください。
 
 ## パッケージ済みバイナリのダウンロード
 
-Releaseページよりダウンロードしてください。zipを展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけなので、各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが、[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
+[Releaseページ](https://github.com/furo-org/VTC/releases)よりzipファイルをダウンロードしてください。
+展開してVTC.exe(もしくは古いものはVTC2018.exe)を起動するだけなので、各種アカウントの用意やインストールなどをせずに手軽に試せます。全画面とウィンドウモードの切り替えはAlt-Enterで、終了はAlt-F4もしくはEscです。パッケージ版はUnreal Editorで編集することはできませんが、[CageClientライブラリ](https://github.com/furo-org/CageClient)または[cage_ros_stack](https://github.com/furo-org/cage_ros_stack)を使ってコマンドを送ることでロボットを動かすことができますし、lidarのシミュレーションも動きます。
 
 念のため古いバイナリも残しておきます。
 + [VTC 2020/5/28版 Windows 64bit 約1GB](https://1drv.ms/u/s!AkekAlL4McuXlQOBSBVlSNaRIZpQ?e=veg3e0)
